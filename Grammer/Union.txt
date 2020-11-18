@@ -1,0 +1,10 @@
+UNIONST -> union identifier { UNIONIN } ;
+UNIONIN -> IDTYPE identifier UNIONINN UNIONIN
+UNIONIN -> eps
+UNIONINN -> , identifier UNIONINN
+UNIONINN -> ;
+IDTYPE -> int
+IDTYPE -> float
+IDTYPE -> char
+IDTYPE -> string
+IDTYPE -> bool

@@ -1,0 +1,10 @@
+STRUCTST -> struct identifier { STRUCTIN } ;
+STRUCTIN -> IDTYPE identifier STRUCTINN STRUCTIN
+STRUCTIN -> eps
+STRUCTINN -> , identifier STRUCTINN
+STRUCTINN -> ;
+IDTYPE -> int
+IDTYPE -> float
+IDTYPE -> char
+IDTYPE -> string
+IDTYPE -> bool

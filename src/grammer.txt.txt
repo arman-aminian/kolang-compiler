@@ -1,0 +1,13 @@
+E -> T EE
+EE -> + T EE
+EE -> eps
+T -> F TT
+TT -> * F TT
+TT -> eps
+F -> identifier FF
+FF -> [ E ]
+FF -> eps
+F -> N
+N -> realnum
+N -> integernum
+F -> ( E )

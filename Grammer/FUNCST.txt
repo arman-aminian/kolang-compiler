@@ -1,0 +1,17 @@
+FUNCST -> RETTYPE identifier ( FUNCARGS ) { }
+RETTYPE -> int
+RETTYPE -> float
+RETTYPE -> char
+RETTYPE -> string
+RETTYPE -> bool
+RETTYPE -> bool
+FUNCARGS -> eps
+FUNCARGS -> IDTYPE identifier ARR FUNCARGSS
+FUNCARGSS -> , IDTYPE identifier ARR FUNCARGSS
+ARR -> eps
+ARR -> [ EX ] ARR
+IDTYPE -> int
+IDTYPE -> float
+IDTYPE -> char
+IDTYPE -> string
+IDTYPE -> bool

@@ -1,0 +1,39 @@
+IFST -> if IB do I ELSE IFST
+IFST -> eps
+ELSE -> eps
+ELSE -> else I
+I -> eps
+I -> EX
+I -> { RR
+RR -> IFST }
+RR -> }
+IB -> BEASTR
+IB -> ( BE )
+BEASTR -> EX BEASTTR
+BEASTTR -> eps
+BEASTTR -> < EX
+BEASTTR -> =< EX
+BEASTTR -> > EX
+BEASTTR -> => EX
+BEASTTR -> = EX
+BEASTTR -> != EX
+BE -> BT BEE
+BEE -> || BT BEE
+BEE -> eps
+BT -> BF BTT
+BTT -> && BF BTT
+BTT -> eps
+BF -> identifier
+BF -> ( BE )
+EX -> T EE
+EE -> + T EE
+EE -> - T EE
+EE -> eps
+T -> F TT
+TT -> * F TT
+TT -> / F TT
+TT -> eps
+F -> identifier
+F -> integernum
+F -> realnum
+F -> ( EX )

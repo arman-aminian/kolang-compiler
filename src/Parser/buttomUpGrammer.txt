@@ -1,0 +1,19 @@
+BE -> BE
+BE -> BT BEE
+BEE -> BEEX BEE
+BEEX -> || BT @OR
+BEE -> eps
+BT -> BF BTT
+BTT -> BTTX BTT
+BTTX -> && BF @AND
+BTT -> eps
+BF -> ( BE )
+BCC -> eps
+BF -> CE BCC
+CE -> eps @CHECKE
+BCC -> < @CHECKE @ISL
+BCC -> =< @CHECKE @ISLEQ
+BCC -> > @CHECKE @ISGR
+BCC -> >= @CHECKE @ISGREQ
+BCC -> = @CHECKE @ISEQ
+BCC -> != @CHECKE @ISNEQ

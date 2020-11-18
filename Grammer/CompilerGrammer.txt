@@ -1,0 +1,164 @@
+S -> P SS
+SS -> P SS
+SS -> eps
+P -> INCLUDEST
+P -> UNIONST
+P -> STRUCTST
+P -> ENUMST
+P -> MAIN
+P -> FUNCST
+P -> FUNCPROTST
+FUNCPROTST -> RETTYPE identifier ( FUNCARGS ) FUNCBODY
+FUNCBODY -> ;
+FUNCBODY -> { STL }
+RETTYPE -> IDTYPE
+RETTYPE -> void
+FUNCARGS -> eps
+FUNCARGS -> IDTYPE identifier ARR FUNCARGSS
+FUNCARGSS -> , IDTYPE identifier ARR FUNCARGSS
+FUNCARGSS -> eps
+MAIN -> int main ( ) { STL }
+STL -> ST STLL
+STL -> eps
+STLL -> ST STLL
+STLL -> eps
+ST -> FORST
+ST -> UNIONST
+ST -> WST
+ST -> STRUCTST
+ST -> DECLST
+ST -> ASTST
+ST -> REPST
+ST -> IFST
+REPST -> repeat R until RB ;
+RB -> BE
+RB -> ( BE )
+R -> ST
+R -> { STL }
+RR -> }
+FORST -> for identifier in ( E , E ) do FOR
+FOR -> ST
+FOR -> { STL }
+INCLUDEST -> # include < identifier FTYPE >
+FTYPE -> eps
+FTYPE -> . identifier
+UNIONST -> union identifier { UNIONIN } ;
+UNIONIN -> IDTYPE identifier UNIONINN UNIONIN
+UNIONIN -> eps
+UNIONINN -> , identifier UNIONINN
+UNIONINN -> ;
+IDTYPE -> int
+IDTYPE -> float
+IDTYPE -> char
+IDTYPE -> string
+IDTYPE -> bool
+STRUCTST -> struct identifier { STRUCTIN } ;
+STRUCTIN -> IDTYPE identifier STRUCTINN STRUCTIN
+STRUCTIN -> eps
+STRUCTINN -> , identifier STRUCTINN
+STRUCTINN -> ;
+ENUMST -> enum identifier { ENUMSTT } ;
+ENUMSTT -> identifier ENUMSTTT
+ENUMSTT -> eps
+ENUMSTTT -> , identifier ENUMSTTT
+ENUMSTTT -> eps
+E -> B BB
+E -> -- identifier NUMM
+E -> ++ identifier NUMM
+E ->  identifier NUMM
+E -> // identifier NUMM
+E -> - NUM NUMM
+NUMM -> BB
+NUMM -> * T BB
+NUMM -> / T BB
+NUMM -> + T BB
+NUMM -> - T BB
+NUMM -> eps
+NUM -> integernum
+NUM -> realnum
+BB -> & B BB
+BB -> | B BB
+BB -> eps
+B -> T EE
+EE -> + T EE
+EE -> - T EE
+EE -> eps
+T -> F TT
+TT -> * F TT
+TT -> / F TT
+TT -> % F TT
+TT -> eps
+F -> identifier
+F -> integernum
+F -> realnum
+F -> ( E FF )
+FF -> eps
+FF -> ++
+FF -> --
+FF -> //
+FF -> **
+WST -> while WB W
+WB -> BE
+WB -> ( BE )
+W -> ST
+W -> { STL }
+DECLST -> IDTYPE identifier ARR DEFINE DECLSTT ;
+DECLSTT -> eps
+DECLSTT -> , identifier ARR DEFINE DECLSTT
+DEFINE -> eps
+DEFINE -> := DEFINEEEE
+DEFINEEEE -> { DEFINEE
+DEFINEEEE -> VALUE
+VALUE -> identifier
+VALUE -> character
+VALUE -> stringliteral
+VALUE -> E
+DEFINEE -> }
+DEFINEE -> VALUE DEFINEEE
+DEFINEEE -> , VALUE DEFINEEE
+DEFINEEE -> }
+ARR -> eps
+ARR -> [ INIT ] ARR
+INIT -> eps
+INIT -> E
+ASTST -> ASTL ASTOP ASTR ;
+ASTL -> identifier ARR
+ARR -> [ E ] ARR
+ARR -> eps
+ASTOP -> :=
+ASTOP -> +=
+ASTOP -> -=
+ASTOP -> *=
+ASTOP -> /=
+ASTOP -> %=
+ASTOP -> ^=
+ASTOP -> &=
+ASTOP -> |=
+ASTOP -> <<=
+ASTOP -> >>=
+ASTR -> BEASTR
+IFST -> if IB do I ELSE
+ELSE -> eps
+ELSE -> else I
+I -> eps
+I -> ST
+I -> { STL }
+RR -> }
+IB -> BEASTR
+IB -> ( BE )
+BE -> BT BEE
+BEE -> || BT BEE
+BEE -> eps
+BT -> BF BTT
+BTT -> && BF BTT
+BTT -> eps
+BF -> identifier
+BF -> ( BE )
+BEASTR -> E BEASTTR
+BEASTTR -> eps
+BEASTTR -> < E
+BEASTTR -> =< E
+BEASTTR -> > E
+BEASTTR -> => E
+BEASTTR -> = E
+BEASTTR -> != E

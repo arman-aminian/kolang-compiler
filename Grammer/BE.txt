@@ -1,0 +1,8 @@
+BE -> BT BEE
+BEE -> || BT BEE
+BEE -> eps
+BT -> BF BTT
+BTT -> && BF BTT
+BTT -> eps
+BF -> id 
+BF -> ( BE )

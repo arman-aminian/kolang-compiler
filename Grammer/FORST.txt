@@ -1,0 +1,17 @@
+E -> for identifier in range ( EX , EX ) do FOR
+FOR -> ST
+FOR -> { FORR
+FORR -> STL }
+FORR -> }
+EX -> T EE
+EE -> + T EE
+EE -> - T EE
+EE -> eps
+T -> F TT
+TT -> * F TT
+TT -> / F TT
+TT -> eps
+F -> identifier
+F -> integernum
+F -> realnum
+F -> ( EX )
